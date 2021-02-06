@@ -72,7 +72,7 @@ order by COUNT(t.title) desc
 
 Results:
 
-![](./Resources/MentorCountsByTitle.png)
+![](./Resources/TotalCountsByTitle.png)
 
 By using the previously-demonstrated sub-query trick, we can find the total as 240,124 active employees. We already found that 90,398 of those employees were eligible for retirement... that's around 37.6% of Pewlett-Hackard's entire workforce! That's certainly bad news, but we can still hope that our potential losses to the "silver tsunami" are not quite so severe among our Senior Level positions.
 
