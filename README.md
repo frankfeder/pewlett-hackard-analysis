@@ -74,7 +74,7 @@ Results:
 
 ![](./Resources/TotalCountsByTitle.png)
 
-By using the previously-demonstrated sub-query trick, we can find the total as 240,124 active employees. We already found that 90,398 of those employees were eligible for retirement... that's around 37.6% of Pewlett-Hackard's entire workforce! That's certainly bad news, but we can still hope that our potential losses to the "silver tsunami" are not quite so severe among our Senior Level positions.
+By using the previously demonstrated sub-query trick, we can find the total as 240,124 active employees. We already found that 90,398 of those employees were eligible for retirement... that's around 37.6% of Pewlett-Hackard's entire workforce! That's certainly bad news, but we can still hope that our potential losses to the "silver tsunami" are not quite so severe among our Senior Level positions.
 
 ### What proportion of Pewlett-Hackard's Active Senior-Level Employees are Nearing Retirement?
 By adding a ```INSERT INTO active_counts``` under the ```select``` statement above, we can enable the creation of a joint table showing both our total active employee counts and our soon-to-retire counts. We'll have to do some in-line typecasting which looks a little messy, but it will allow us to show the percentages in the same table:
