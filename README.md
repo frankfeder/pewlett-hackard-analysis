@@ -1,4 +1,4 @@
-# Employee Retirement Analysis for "Pewlett Hackard"
+# Employee Retirement Analysis for Pewlett Hackard
 ## Overview
 The purpose of this analysis is to summarize how many employees of the company "Pewlett Hackard" are approaching retirement, based on a database contructed out of provided .csv's. After getting that summary, the analysis will also assess how many of each department's next most senior employees are eligible to become "mentors" to evaluate how much of a danger the newest "silver tsunami" poses to the business. 
 
