@@ -1,9 +1,8 @@
-# Employee Retirement Analysis
-## Pewlett Hackard PostgreSQL Practice
-### Overview
+# Employee Retirement Analysis for "Pewlett Hackard"
+## Overview
 The purpose of this analysis is to summarize how many employees of the company "Pewlett Hackard" are approaching retirement, based on a database contructed out of provided .csv's. After getting that summary, the analysis will also assess how many of each department's next most senior employees are eligible to become "mentors" to evaluate how much of a danger the newest "silver tsunami" poses to the business. 
 
-### Results
+## Results
 The most insightful parts of this analysis are the Count summaries by title. 
 Here is count of soon-to-retire employees by job title:
 
@@ -15,8 +14,8 @@ Takeaways:
 * Retirement-age employees not in Senior level positions are largely in Mid level (not managerial or assistive) roles (26,465 / 32,730 = ~81%)
 * While only 2 Managers are in retirement age, there are only 9 active Managers in the entire company (2 / 9 = 22% of managers soon to retire!)
 
-### Summary
-**How many roles will need to be filled as the "silver tsunami" begins to make an impact?**
+## Summary
+### How many roles will need to be filled as the "silver tsunami" begins to make an impact?
 As noted above, 90,398 roles will soon need to be filled as the current generation of most-senior employees retires. To find this we can manually add the results of the previous table, or have SQL do it for us - we have to create a temptable first, as SUM(COUNT(ut.titles)) is illegal in postgreSQL (can't nest aggregate functions):
 
 ```
@@ -31,7 +30,7 @@ Result:
 ![](./Resources/retireeSum.png)
 
 
-**Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?**
+### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?**
 For this analysis, "mentorship eligible employees" includes anyone born in 1965 with an active title ("to_date" value of "1/1/9999"). It is worth noting that this is a narrower window than our retiree-eligible selection dates (retiree-eligible includes anyone born from 1952-1955, while mentor-eligible only includes 1965). Based on that difference, we might expect to only find 25% as many employees matching this criteria.
 
 Here are the counts of mentor-eligible employees by title:
@@ -60,7 +59,7 @@ This imbalance raises two new questions:
 1. What proportion of our total active employees are nearing retirement?
 2. What proportion of our total Senior Level employees are nearing retirement?
 
-**What proportion of Pewlett-Hackard's Total Active Employees are Nearing Retirement?**
+### What proportion of Pewlett-Hackard's Total Active Employees are Nearing Retirement?
 Here's the SQL to find the summary of total counts by active title:
 
 ```
@@ -77,7 +76,7 @@ Results:
 
 By using the previously-demonstrated sub-query trick, we can find the total as 240,124 active employees. We already found that 90,398 of those employees were eligible for retirement... that's around 37.6% of Pewlett-Hackard's entire workforce! That's certainly bad news, but we can still hope that our potential losses to the "silver tsunami" are not quite so severe among our Senior Level positions.
 
-**What proportion of Pewlett-Hackard's Active Senior-Level Employees are Nearing Retirement?**
+### What proportion of Pewlett-Hackard's Active Senior-Level Employees are Nearing Retirement?
 By adding a ```INSERT INTO active_counts``` under the ```select``` statement above, we can enable the creation of a joint table showing both our total active employee counts and our soon-to-retire counts. We'll have to do some in-line typecasting which looks a little messy, but it will allow us to show the percentages in the same table:
 
 ```
