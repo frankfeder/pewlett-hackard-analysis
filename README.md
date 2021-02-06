@@ -30,7 +30,7 @@ Result:
 ![](./Resources/retireeSum.png)
 
 
-### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?**
+### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 For this analysis, "mentorship eligible employees" includes anyone born in 1965 with an active title ("to_date" value of "1/1/9999"). It is worth noting that this is a narrower window than our retiree-eligible selection dates (retiree-eligible includes anyone born from 1952-1955, while mentor-eligible only includes 1965). Based on that difference, we might expect to only find 25% as many employees matching this criteria.
 
 Here are the counts of mentor-eligible employees by title:
